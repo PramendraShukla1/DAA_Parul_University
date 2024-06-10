@@ -1,6 +1,8 @@
 
 '''
 
+Two number sum :
+
 def addTwo(a,b):
     return a+b
 
@@ -9,6 +11,8 @@ b = int(input("Enter second number"))
 print(addTwo(a,b))
 
 
+
+Find Greatest between three numbers:
 
 def maximum(a, b, c):
     if (a>=b) and (a>=c):
@@ -23,7 +27,6 @@ def maximum(a, b, c):
 a = int(input(" Enter number one "))
 b = int(input(" Enter number two "))
 c = int(input(" Enter number three"))
-
 print(maximum(a,b,c))
 
 '''
