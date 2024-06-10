@@ -68,6 +68,19 @@ def countPrime(num):
 a = int(input("Enter number -> "))
 result = countPrime(a)
 print(result)
+
+
+
+#Question 2: Python Program to Find Factorial of Number Using Recursion
+
+def factorial(num):
+    if num == 1:
+        return num
+    else:
+        result = num * factorial(num-1)
+        return result
+
+num = int(input("Enter number -> "))
+print(factorial(num))
+
 '''
-
-
