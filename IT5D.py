@@ -85,3 +85,16 @@ print(factorial(num))
 
 '''
 
+def checkPrime(num):
+    for i in range(2, num):
+        if num % i == 0:
+            return False
+        return True
+
+num = int(input("Enter number -> "))
+result = checkPrime(num)
+
+if result:
+    print("Number is Prime")
+else:
+    print("Number is not prime")

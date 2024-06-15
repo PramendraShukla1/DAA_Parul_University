@@ -152,3 +152,23 @@ students = [2,7,4]
 print(minMoves(seats, students))
 '''
 #--------------------------------------------------#
+
+'''
+945. Minimum Increment to Make Array Unique
+Link: https://leetcode.com/problems/minimum-increment-to-make-array-unique/?envType=daily-question&envId=2024-06-14
+
+def minIncrementForUnique(nums):
+    nums.sort()
+    temp = 0
+    for i in range(1,len(nums)):
+        pre = nums[i - 1]
+        cur = nums[i]
+        if pre >= cur:
+            temp += pre-cur+1
+            nums[i] = pre + 1
+    return temp
+
+
+nums = [1,1,2,2,3,7]
+print(minIncrementForUnique(nums))
+'''

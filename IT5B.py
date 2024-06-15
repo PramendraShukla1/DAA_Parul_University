@@ -15,6 +15,6 @@ if result == True:
     print("The number is prime")
 else:
     print("The number is not prime")
-
 '''
+
 
