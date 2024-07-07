@@ -96,6 +96,11 @@ def bubbleSort2(arr):
 #BUBBLESORT
 
 
+#QUICK SORT ALGORITHM
+
+#QUICK SORT ALGORITHM
+
+
 # Example usage:
 arr = [5, 2, 8, 3, 1, 6, 4]
 arr = merge_sort(arr)
