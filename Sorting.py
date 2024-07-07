@@ -1,5 +1,6 @@
 
-# MERGE SORT ALGORITHM
+# ------------------------MERGE SORT ALGORITHM------------------------
+'''
 def merge_sort(arr):
     if len(arr) <= 1:
         return arr
@@ -28,10 +29,11 @@ def merge(left, right):
     result.extend(left[i:])
     result.extend(right[j:])
     return result
+'''
 
-# MERGE SORT ALGORITHM
 
-#BUBBLE SORT ALGORITHM
+#------------------------BUBBLE SORT ALGORITHM------------------------
+'''
 def bubbleSort(nums):
     for i in range(len(nums)-1, 0, -1):
         for j in range(i):
@@ -40,9 +42,10 @@ def bubbleSort(nums):
                 nums[j] = nums[j+1]
                 nums[j+1] = temp
 
-#BUBBLE SORT ALGORITHM
+'''
 
-# SELECTION SORT ALGORITHM
+# ------------------------SELECTION SORT ALGORITHM------------------------
+'''
 def selectionSort(nums):
     for i in range(len(nums)-1):
         min_index = i
@@ -51,10 +54,11 @@ def selectionSort(nums):
                 min_index = j
 
         nums[i], nums[min_index] = nums[min_index], nums[i]
-# SELECTION SORT ALGORITHM
+'''
 
 
-#INSERTION SORT ALGORITHM
+#------------------------INSERTION SORT ALGORITHM------------------------
+'''
 def insertionSort(nums):
     # Traverse through 1 to len(arr)
     for i in range(1, len(nums)):
@@ -65,9 +69,10 @@ def insertionSort(nums):
         while nums[j - 1] > nums[j] and j > 0:
             nums[j - 1], nums[j] = nums[j], nums[j - 1]
             j -= 1
-#INSERTION SORT ALGORITHM
+'''
 
-#BUBBLE SORT ALGORITHM
+#------------------------BUBBLE SORT ALGORITHM------------------------
+'''
 def bubbleSort2(arr):
     n = len(arr)
     # optimize code, so if the array is already sorted, it doesn't need
@@ -92,16 +97,5 @@ def bubbleSort2(arr):
             # if we haven't needed to make a single swap, we
             # can just exit the main loop.
             return
-
-#BUBBLESORT
-
-
-#QUICK SORT ALGORITHM
-
-#QUICK SORT ALGORITHM
-
-
-# Example usage:
-arr = [5, 2, 8, 3, 1, 6, 4]
-arr = merge_sort(arr)
-print(arr)
+'''
+#------------------------QUICK SORT ALGORITHM------------------------
