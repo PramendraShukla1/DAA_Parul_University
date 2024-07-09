@@ -99,3 +99,47 @@ def bubbleSort2(arr):
             return
 '''
 #------------------------QUICK SORT ALGORITHM------------------------
+'''
+def partition(arr: List[int], s: int, e: int) -> int:
+    pivot = arr[s]
+    cnt = 0
+    for i in range(s + 1, e + 1):
+        if arr[i] <= pivot:
+            cnt += 1
+
+    # Place pivot at right position
+    pivotIndex = s + cnt
+    arr[pivotIndex], arr[s] = arr[s], arr[pivotIndex]
+
+    # Left and right part
+    i, j = s, e
+    while i < pivotIndex and j > pivotIndex:
+        while i < pivotIndex and arr[i] <= pivot:
+            i += 1
+        while j > pivotIndex and arr[j] > pivot:
+            j -= 1
+
+        if i < pivotIndex and j > pivotIndex:
+            arr[i], arr[j] = arr[j], arr[i]
+            i += 1
+            j -= 1
+
+    return pivotIndex
+
+def quickSortHelper(arr: List[int], s: int, e: int):
+    if s >= e:
+        return
+
+    # Partition
+    p = partition(arr, s, e)
+
+    # Left part sorting
+    quickSortHelper(arr, s, p - 1)
+
+    # Right part sorting
+    quickSortHelper(arr, p + 1, e)
+
+def quickSort(arr: List[int]) -> List[int]:
+    quickSortHelper(arr, 0, len(arr) - 1)
+    return arr
+'''
