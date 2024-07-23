@@ -92,6 +92,51 @@ def isPossible(stalls, k, mid, n):
             lastPos = stalls[i]
     
     return False
-'''
+
 #-------------------Practical-5---------------------#
 #Link: https://www.naukri.com/code360/problems/detect-cycle-in-an-undirected-graph_758967
+
+
+
+def criticalConnections(n, connections):
+    """
+    Returns all critical connections in the network.
+    """
+    graph = [[] for _ in range(n)]
+    for u, v in connections:
+        graph[u].append(v)
+        graph[v].append(u)
+
+    low = [0] * n
+    disc = [0] * n
+    parent = [-1] * n
+    time = 0
+    critical = []
+
+    def dfs(u):
+        nonlocal time
+        low[u] = disc[u] = time
+        time += 1
+        for v in graph[u]:
+            if disc[v] == 0:
+                parent[v] = u
+                dfs(v)
+                low[u] = min(low[u], low[v])
+                if low[v] > disc[u]:
+                    critical.append((u, v))
+            elif v!= parent[u]:
+                low[u] = min(low[u], disc[v])
+
+    dfs(0)
+    return critical
+
+# Example usage:
+n = 4
+connections = [[0, 1], [1, 2], [2, 0], [1, 3]]
+print(criticalConnections(n, connections))  # Output: [(1, 3)]
+
+n = 6
+connections = [[0, 1], [1, 2], [2, 0], [1, 3], [3, 4], [4, 5], [5, 3]]
+print(criticalConnections(n, connections))  # Output: [(1, 3), (3, 5)]
+
+'''
